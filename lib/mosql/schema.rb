@@ -87,7 +87,7 @@ module MoSQL
               end
             end
             if meta[:extra_props]
-              column '_extra_props', 'TEXT'
+              column '_extra_props', 'JSON'
             end
           end
         end

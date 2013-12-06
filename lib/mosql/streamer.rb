@@ -43,7 +43,7 @@ module MoSQL
           log.warn("Ignoring row (#{obj.inspect}): #{e}")
         else
           log.error("Error processing #{obj.inspect} for #{ns}.")
-          raise e
+          # raise e
         end
       end
     end
