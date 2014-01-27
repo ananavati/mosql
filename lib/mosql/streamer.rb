@@ -121,7 +121,7 @@ module MoSQL
 
       start    = Time.now
       sql_time = 0
-      collection.find(nil, :batch_size => BATCH) do |cursor|
+      collection.find(nil, :batch_size => BATCH, :timeout => false) do |cursor|
         with_retries do
           cursor.each do |obj|
             batch << @schema.transform(ns, obj)

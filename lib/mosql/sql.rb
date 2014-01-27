@@ -52,7 +52,7 @@ module MoSQL
         begin
           table.insert(item)
         rescue Sequel::DatabaseError => e
-          raise e unless self.class.duplicate_key_error?(e)
+          # raise e unless self.class.duplicate_key_error?(e)
           log.info("RACE during upsert: Upserting #{item} into #{table}: #{e}")
         end
       elsif rows > 1
